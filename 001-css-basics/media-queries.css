@@ -21,18 +21,6 @@
 
 }
 
-#cta {
-    display: block;
-    /*  ist wie ein neues div, nicht inline (entweder-oder), Element kann in Breite und Höhe definiert werden, */
-    width: 350px;
-    height: 100px;
-    font-family: Helvetica, sans-serif;
-   
-
-    /* box-shadow = Schlagschatten um die Kontur herum */
-}
-
-
 @media (min-width: 400px) {
    section {
     display: flex;
