@@ -1,0 +1,51 @@
+.roter-text {
+    color: red;
+}
+
+.blauer-hintergrund {
+    background-color: lightskyblue;
+}
+
+#headline1 {
+    text-decoration: line-through;
+}
+
+#headline2 {
+    letter-spacing: 0.5em;
+    /* relativ zur Schriftgröße */
+}
+
+body {
+    background-color: lightgray;
+    margin: 40px;
+    /* Body Tag - gilt für den ganzen Body */
+    /* User Agent Styles = Presettings des Browsers */
+}
+#list-element1 {
+    border-left: 15px solid deeppink;
+    /* Selector Specificity (1,0,0) --> Rang 1 */
+    /* eine ID übersteuert Klasse und Tag */
+}
+
+.list-element {
+    border-left: 3px solid blue;
+    /* Selector Specificity (0,1,0) --> Rang 2 */
+    /* eine Klasse übersteuert den Tag, aber nicht die ID */
+}
+
+li {
+    padding: 50px;
+    border-left: 100px solid green;
+    /* Selector Specificity (0,0,1) --> Rang 3 */
+    /* ein Tag übersteuert nicht die Klasse und schon gar nicht die ID */
+}
+
+@media (min-width: 400px) {
+    body {
+        background: orange;
+    }
+    /* Bedingung an den Browser, wenn die Bedingung zutrifft, dann führt der Browser den Befehl aus - Hat der Viewport mindestens 400px, dann wird der Style angewendet */
+    /* Wichtig für Responsive Design */
+}
+
+

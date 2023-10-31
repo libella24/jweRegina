@@ -1,0 +1,40 @@
+.wrapper {
+    background-color: lightgreen;
+    font-family: Helvetica, sans-serif;
+}
+.wrapper2 {
+    background-color: rgb(199, 242, 222); /* hex  */
+    border-color: rgb(227, 0.15); /* rgb  */
+    caret-color: hsl(281, 71%, 49%); /* hsl (hue, saturation, lumination  */
+    font-family: Helvetica, sans-serif; 
+}
+.default {
+    background-color: rgb(90, 134, 214);
+    border: none;
+    padding: 10px;
+}
+
+.outline {
+    background-color: transparent;
+    border: 2px solid #962c05;
+    padding: 10px;
+}
+
+#cta {
+    display: block;
+    /*  ist wie ein neues div, nicht inline (entweder-oder), Element kann in Breite und Höhe definiert werden, */
+    width: 150px;
+    height: 100px;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    border-radius: 50%;
+    box-shadow: 20px 18px 30px rgb(230, 10, 164);
+
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    /* box-shadow = Schlagschatten um die Kontur herum */
+}

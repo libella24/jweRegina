@@ -1,0 +1,44 @@
+.article1 {
+    background-color: aquamarine;
+    padding-left: 10px;
+    margin: 40px;
+    border-left: 5px solid darkcyan
+
+}
+
+.article2 {
+    background-color: beige;
+    padding-left: 10px;
+    margin: 40px;
+    border-left: 5px solid darkkhaki
+}
+
+.article3 {
+    background-color: lightpink;
+    padding-left: 10px;
+    margin: 40px;
+    border-left: 5px solid darkorchid
+
+}
+
+#cta {
+    display: block;
+    /*  ist wie ein neues div, nicht inline (entweder-oder), Element kann in Breite und Höhe definiert werden, */
+    width: 350px;
+    height: 100px;
+    font-family: Helvetica, sans-serif;
+   
+
+    /* box-shadow = Schlagschatten um die Kontur herum */
+}
+
+
+@media (min-width: 400px) {
+   section {
+    display: flex;
+}
+    }
+    /* Bedingung an den Browser, wenn die Bedingung zutrifft, dann führt der Browser den Befehl aus - Hat der Viewport mindestens 400px, dann wird der Style angewendet */
+    /* Wichtig für Responsive Design */
+
+
