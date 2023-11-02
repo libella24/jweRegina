@@ -1,70 +1,65 @@
 <!DOCTYPE html>
 <html lang="de">
-    <link rel="stylesheet" href="media-queries.css">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Queries</title>
-</head>
-<body>
-    <div class="wrapper">
-        <a href="index.html">Zurück zur index.html</a>
-        <header>
-            <h1>CSS Media Queries</h1>
-            <p class="subtitle">
-                Unterschiedlicher Code für unterschiedliche Viewport-Größen
-            </p>
-        </header>
-        <main>
-            <!-- Content Element: Responsive Test Element -->
-            <section>
-                <!-- 3 Articles mit Header-Main-Footer -->
-                <article id="cta" class="article1">
-                    <header>
-                        <h2>Artikel 1 Headline</h2>
-                    </header>
-                    <main>
-                        <p>Einleitungstext des 1. Artikels
-                        </p>
-                    </main>
-                    <footer>
-                        <a href="#">Link zum Artikel 1</a>
-                    </footer>
-                </article>
-
-                <article id="cta" class="article2">
-                    <header>
-                        <h2>Artikel 2 Headline</h2>
-                    </header>
-                    <main>
-                        <p>Einleitungstext des 2. Artikels   
-                        </p>
-                    </main>
-                    <footer>
-                        <a href="#">Link zum Artikel 2</a>
-                    </footer>
-                </article>
-
-                <article id="cta" class="article3">
-                    <header>
-                        <h2>Artikel 3 Headline</h2>
-                    </header>
-                    <main>
-                        <p>Einleitungstext des 3. Artikels   
-                        </p>
-                    </main>
-                    <footer>
-                        <a href="#">Link zum Artikel 3</a>
-                    </footer>
-                </article>
-
-            </section>
-        </main>
-        <footer>
-
-        </footer>
-
-    </div>
-    
-</body>
+    <link rel="stylesheet" href="media-queries.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Media Queries</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <a href="index.html">Zurück zur index.html</a>
+            <header>
+                <h1>CSS Media Queries</h1>
+                <p class="subtitle">
+                    Unterschiedlicher Code für unterschiedliche Viewport-Größen
+                </p>
+            </header>
+            <main class="articleMain">
+                <!-- Content Element: Responsive Test Element -->
+                <section>
+                    <!-- 3 Articles mit Header-Main-Footer -->
+                    <div class="wrapper">
+                        <article id="cta" class="article1">
+                            <header>
+                                <h2>Artikel 1 Headline</h2>
+                            </header>
+                            <main>
+                                <p>Einleitungstext des 1. Artikels <br></p>
+                            </main>
+                            <footer>
+                                <a href="#">Link zum Artikel 1</a>
+                            </footer>
+                        </article>
+                    </div>
+                    <div class="wrapper">
+                        <article id="cta" class="article2">
+                            <header>
+                                <h2>Artikel 2 Headline</h2>
+                            </header>
+                            <main>
+                                <p>Einleitungstext des 2. Artikels</p>
+                            </main>
+                            <footer>
+                                <a href="#">Link zum Artikel 2</a>
+                            </footer>
+                        </article>
+                    </div>
+                        <article id="cta" class="article3">
+                            <header>
+                                <h2>Artikel 3 Headline</h2>
+                            </header>
+                            <main>
+                                <p>Einleitungstext des 3. Artikels</p>
+                            </main>
+                            <footer>
+                                <a href="#">Link zum Artikel 3</a>
+                            </footer>
+                        </article>
+                   
+                </section>
+            </main>
+            <footer></footer>
+        </div>
+    </body>
 </html>

@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/Lato-Regular.ttf) 
+    /* hereinkopiert aus Google Fonts -> Copy CSS */
+  }
+
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: bold;
+    src: url(fonts/Lato-Bold.ttf) 
+    /* hereinkopiert aus Google Fonts -> Copy CSS */
+    }
+      
+
+html {
+    font-family: Lato; 
+    /* evt. Fallback */
+}
+
+html * {
+    box-sizing: border-box; 
+}
+
+
+h1 {
+    margin-bottom: 0px;
+    margin-left: 25px;
+    margin-right: 25px;  
+}
+
+#subtitle {
+    font-size: 25px;
+    margin-top: 0px;
+    margin-left: 25px;
+    margin-right: 25px;
+    z-index: 10; 
+
+}
+#main-header {
+    background-image: url(img/pexels-the-cactusena-18937041.jpg);
+    overflow: hidden; /* enthaltene Elemente mit Margen überlappen nicht */
+    height: 500px;
+    background-size: auto 100%; */
+    background-position: center center;
+    background-repeat: no-repeat;
+   
+
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    position: relative;
+}
+
+#main-header::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.58);
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /*back-front; 0 = ganz hinten*/
+}
+
+#lighter {
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.58);
+    position:absolute;
+   
+    top: 0;
+    left: 0;
+    z-index: 0; /*back-front; 0 = ganz hinten*/
+}
+
+body {
+    margin: 0;
+}
+
+#main-nav {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    padding 25px;
+    background: orange;
+    box-sizing: border-box;
+
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+

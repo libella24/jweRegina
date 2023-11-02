@@ -2,7 +2,8 @@
     background-color: aquamarine;
     padding-left: 10px;
     margin: 40px;
-    border-left: 5px solid darkcyan
+    border-left: 5px solid darkcyan;
+    font-family: Helvetica, sans-serif;
 
 }
 
@@ -10,14 +11,16 @@
     background-color: beige;
     padding-left: 10px;
     margin: 40px;
-    border-left: 5px solid darkkhaki
+    border-left: 5px solid darkkhaki;
+    font-family: Helvetica, sans-serif;
 }
 
 .article3 {
     background-color: lightpink;
     padding-left: 10px;
     margin: 40px;
-    border-left: 5px solid darkorchid
+    border-left: 5px solid darkorchid;
+    font-family: Helvetica, sans-serif;
 
 }
 
