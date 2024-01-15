@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gallery in JavaScript dynamically generated</title>
+        <link rel="stylesheet" href="../vendor/fancybox/fancybox.css" />
+    </head>
+    <body>
+        <!-- 
+
+            Bilder liegen unter:
+
+            Volle Auflösung:        img/full/x.jpg
+            Thumbnail/Minaturbild:  img/thumb/x.jpg 
+
+         -->
+
+        <div id="gallery">
+            <!-- hier kommt das dynamisch generierte HTML -->
+        </div>
+
+        <script src="../vendor/fancybox/fancybox.umd.js"></script>
+        <script>
+            Fancybox.bind("[data-fancybox]", {
+                // Your custom options
+            });
+
+            let galleryImages = ["1", "2", "3", "4"];
+
+            let createDynamicGallery = function () {
+                let htmlOutput = "";
+
+                for (let img = 1; img <= galleryImages.length; img++) {
+                    htmlOutput += `
+                        <a href="img/full/${img}.jpg" data-fancybox="gallery">
+                            <img src="img/thumbs/${img}.jpg" alt="" />
+                        </a>
+                    `;
+                }
+
+                galleryImages.forEach(function (img) {
+                    htmlOutput += `
+                        <a href="img/full/${img}.jpg" data-fancybox="gallery">
+                            <img src="img/thumbs/${img}.jpg" alt="" />
+                        </a>
+                    `;
+                });
+
+                document.querySelector("#gallery").innerHTML = htmlOutput;
+            };
+
+            createDynamicGallery();
+        </script>
+    </body>
+</html>
