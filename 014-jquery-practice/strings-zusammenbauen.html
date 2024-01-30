@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>String zusammenbauen</title>
+    </head>
+    <body>
+        <div id="output"></div>
+
+        <script src="../vendor/jquery-3.7.1.min.js"></script>
+        <script>
+            let person = {
+                firstname: "Regina",
+                lastname: "Fleckl",
+            };
+          let firstnameVar = "Regina";
+
+           $("#output").text("Herzlich willkommen " + person.firstname);
+
+           //diese zweite Variante hier überschreibt alles...
+           //Achtung, man braucht die Accents `, um den Textstring 1:1 übernehmen zu können
+            $("#output").text(`
+                Welcome ${person.firstname} ${person.lastname} !
+            `);
+        
+        </script>
+    </body>
+</html>

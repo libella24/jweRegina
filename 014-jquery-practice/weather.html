@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JSON API</title>
+    </head>
+    <body>
+        <div id="gallery">
+            <!-- Data from JSON API -->
+        </div>
+
+        <button id="load">Galerie nachladen</button>
+
+        <script src="../vendor/jquery-3.7.1.min.js"></script>
+        <script>
+            const url = "https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=feff54de6918a59bd0084d68ac928d77";
+
+            let getWeatherFromApi = function () {
+                $.getJSON(url, function (data) {
+                    let htmlOut = "";
+                    $(data).each(function (index, entry) {
+                        if (index > 0 && index < 100) {
+                            htmlOut += `<img src="${entry.thumbnailUrl}" alt="" />`;
+                        }
+
+                        // Shorthand schreibweise für eine Condition
+                        // WENN BEDINGUNG true ? DANN CODE : ANSONSTEN CODE
+                        index == 5
+                            ? console.log("index is 5")
+                            : console.log("index is not 5");
+                    });
+
+                    $("#gallery").html(htmlOut);
+                });
+            };
+
+            $("#load").on("click", function () {
+                getWeatherFromApi();
+            });
+        </script>
+    </body>
+</html>

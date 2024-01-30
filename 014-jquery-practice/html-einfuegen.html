@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML einfügen, ändern und entfernen</title>
+    </head>
+    <body>
+        <h2>HTML Zusammenbauen / in jQuery erstellen</h2>
+
+        <div class="wrapper">
+            <!-- dynamic HTML goes here -->
+        </div>
+
+        <div id="gallery"></div>
+
+        <div class="content">
+            autem tenetur Fuck similique delectus alias rerum rem unde saepe vero ut
+            natus dolores, dicta, ducimus aut debitis magnam culpa. Totam,
+            deleniti.
+        </div>
+
+        <script src="../vendor/jquery-3.7.1.min.js"></script>
+
+        <script>
+            // Elemente einfügen
+            // unter der Headline wird der p-Tag eingefügt - mit Accent `wird der ganze Code genommen
+
+            //"Hy, I'm dynamic" wird irgendwie durch einen anderen Code überschrieben, das ist wahrscheinlich, weil wir der CLASS=greeting1 die ID=dynamic zugeordnet haben
+
+            $(".wrapper").append(`<p class="greeting1">Hy, I'm dynamic!</p>`);
+            $(
+                `<p class="greeting2">Servus, ich bin aus Österreich</p>`
+            ).appendTo(".wrapper");
+
+            // .prepend = vor den Wrapper platzieren
+            $(".wrapper").prepend(
+                `<div class="example-before">Das ist ein DIV der Klasse "example-before", das vor dem Wrapper eingefügt wird.</div>`
+            );
+
+            // Elemente ändern
+            //==================
+            // ID oder Klasse 
+
+            // ".greeting1" spricht die Klasse "greeting1" an
+            $(".greeting1").attr("id", "dynamic-1"); //ergänzt die ID
+            //$(".greeting1").attr("class", "dynamic-2"); //ändert die Klasse
+            //$(".greeting1").removeAttr("id");
+            //$(".greeting1").attr("id", "dynamic-1");
+
+            // CSS Anpassen (.css)
+            //=====================
+            $(".greeting2").css("background-color", "pink");
+            $(".greeting2").css({
+                "font-weight": "bold",
+                border: "2px dashed green",
+            });
+            $(".example-before").css("background", "lightgreen");
+
+            // Classes hinzufügen/entfernen
+            //=============================
+            $("body")
+                .addClass("js-works")
+                .addClass("btn btn-primary extra-class-dynamic") ///Was bewirkt diese Klasse?
+                .removeClass("temporary-class");
+
+
+            //Definition von ".greeting2 (//Wow, that changes everything)"
+            // Warum nochmal 
+
+            $(".greeting2").text(
+                $(".greeting2").text() + " // Wow, that changes everything!"
+            );
+            $(".greeting1").html(`<i>Wow, </i> that's awesome!`);
+
+            // Umschließen von Elementen
+            //===========================
+            // es wird die ID=gallery angesprochen
+            // bis zur Anzahl 10 füge immer den HTML-Code ìmg src="..." hinzu
+            for (let i = 0; i < 10; i++) {
+                $("#gallery").append(
+                    '<img src="https://placehold.co/600x400">'
+                );
+            }
+            //jedes img wird in einen a href eingeschlossen
+            //Variante 1: 
+            $("#gallery img").wrap('<a href="#"></a>');
+            //Variante 2:
+
+            $("#gallery img").each(function (index, img) {
+                $(img).wrap('<a href="#"></a>');
+            });
+            
+
+            // Mehrere Elemente selektieren und ändern
+            $("#gallery img").css("border", "3px solid grey");
+            
+
+            // Elemente ersetzen
+            $("div.content:contains('FUCK')").replaceWith(
+                "<p>Contains bad words.</p>"
+            );
+
+            // Kopieren von Elementen
+            $("h2").clone().prependTo("#gallery");
+
+            // Elemente entfernen
+            $("#gallery img").last().remove();
+            */
+        </script>
+    </body>
+</html>
