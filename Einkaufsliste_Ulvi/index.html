@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- removes favicon error -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Shopping List</title>
+
+</head>
+
+<body>
+
+    <!--
+        #   "Artikelname"-Input
+        #   "Neuer Artikel"-Button (oder für die Nerds: mit Enter)
+        #   Ausgabe der Liste (zu beginn leer)´
+  
+        1. Funktion: Hinzufügen eines neuen Artikels  
+            => keine Artikel ohne Namen
+            NERDS:
+            =>  Kein Artikel doppelt möglich
+            =>  Artikelanzahl
+
+        2. Funktion: Abhaken eines gekauften Artikels 
+        
+        3. Funktion: Entfernen eines Artikels 
+    
+        $('#artikel_1').destroy();    
+    -->
+
+    <div id="wrapper">
+
+        <div id="app">
+            <div class="app_section">
+                <img id="cart_icon" src="img/cart.png" alt="shopping cart icon">
+                <!-- hidden counter -> js -->
+                <div class="hidden" id=count_items>
+                    <p>1</p>
+                </div>
+                <h1>shopping list</h1>
+            </div>
+
+            <div class="app_section">
+                <input type="text" id="text_field" name="text_field" placeholder="Add your new item">
+                <!-- fullwidth + sign  -->
+                <button id="add_button">&#65291;</button>
+            </div>
+            <div id="app_list">
+                <!-- add in js -->
+                <!-- <div class="app_list_item">
+                    <button class="check_button">&check;</button>
+                    <p class="app_list_item_name check">Butter</p>
+                    <button class="minus_button">&#65293;</button>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- jquery core script einfügen -->
+    <script src="js/.vendor/jquery-3.5.1.js"></script>
+
+    <!-- my js code -->
+    <script src="js/shoppinglist.js"></script>
+
+</body>
+
+</html>
