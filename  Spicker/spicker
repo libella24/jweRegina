@@ -1,0 +1,88 @@
+Begriffe
+
+integer – ganze Zahl
+parse - analysieren / prüfen
+parseInt – gibt einen String als ganze Zahl aus
+
+scope – Gültigkeitsbereich
+
+random – zufällig
+Math.random – zufällige Zahl
+
+eval – evaluieren ? = nicht empfohlen ?
+
+event-API - Schnittstelle zw. Javascript und HTML od. SVG
+
+
+DOM – Document Object Model
+element.classList – stellt die Klassen die einem Element zueordnet sind zur Verfügung
+.add – fügt Liste eine weitere Klasse hinzu
+.remove – entfernt eine Klasse aus Liste
+.length – ermittelt wieviele Klassennamen die Liste enthält
+.contains – prüft auf bestimmte Klassen
+.toggle – schaltet Klassen ein bzw. aus
+
+document
+.getElementById('id')
+.getElementByClass('class')
+.querySelector('#id /.class')
+
+.addEventListener('click', funktionsname)  (Methode)
+
+output.textContent
+
+performance
+.now() – Anzahl Millisekunden die vergangen sind
+
+let start = performance.now();
+const countTime = performance.now() - start; (von - bis?)
+
+.count() ??
+
+
+showDataStructure – 
+
+
+
+Vordefinierte Funktionen / Methoden / Eigenschaften
+
+Number
+.parseInt() – gibt einen String als ganze Zahl aus(Funktion)
+.parseFloat() – gibt einen String als Kommazahl aus(Funktion)
+.eval – ??
+
+String
+.indexOf() – Position einer Zeichenkette(Methode)
+.slice() – Teil aus Zeichenkette extrahieren(Methode)
+.toLowerCase() – alles klein schreiben(Methode)
+.toUpperCase() – alles groß schreiben(Methode)
+.trim() – Leerzeichen entfernen(Methode)
+.length – Anzahl Zeichen(Eigenschaft)
+
+Array 
+(erste Position ist 0 !!!!)
+.length() – Array.length = länge des Arrays 
+.push() – hängt Elemente an ENDE eines Arrays (Methode)
+.unshift() – hängt Elemente an ANFANG eines Arrays (Methode)
+.pop() – entfernt das LETZTE Element eines Arrays (Methode)
+.shift() – entfernt das ERSTE Element eines Arrays (Methode)
+.slice() – extrahiert einen Teil des Arrays (Methode) 
+    Array.slice(anfang [, ende]) (-1 = letzter Eintrag, -2 Vorletzter usw.)
+.forEach() – 
+.indexOf() – durchsucht Array nach gesuchten Begriff
+.join() – verbindet alle Elemente eines Arrays zu einer Zeichenkette (Methode)
+
+
+
+
+
+Vordefinierte Objekte
+
+Math
+Math.random – zufällige Zahl(Kommazahl!)
+Math.floor – nächstniedrigere GANZE ZAHL(eliminiert Kommastellen)!
+Math.round – kaufmännische Rundung
+Math.min – kleinste Zahl aus einer Zahlenmenge
+Math.max – größte Zahl aus einer Zahlenmenge
+Math.sqrt – Quadratwurzel
+Math.PI – 3,14
