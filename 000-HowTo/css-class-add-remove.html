@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>CSS-Klasse hinzufügen/entfernen mit jQuery</title> 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+  <style> 
+    /* CSS-Stil für die hinzugefügte Klasse */ 
+    .hervorgehoben { 
+      color: red; 
+      font-weight: bold; 
+    } 
+  </style> 
+</head> 
+<body> 
+ 
+<!-- Ein div-Element mit der ID "zielElement" --> 
+<div id="zielElement"> 
+  <p>Dies ist ein Beispieltext.</p> 
+</div> 
+ 
+<script> 
+  // jQuery: Warte, bis das Dokument vollständig geladen ist 
+  $(document).ready(function() { 
+    // Beispiel: Klasse hinzufügen 
+    $("#zielElement").addClass("hervorgehoben"); 
+ 
+    // Warte 2 Sekunden und dann Klasse entfernen 
+    setTimeout(function() { 
+      $("#zielElement").removeClass("hervorgehoben"); 
+    }, 2000); 
+  }); 
+</script> 
+ 
+</body> 
+</html>

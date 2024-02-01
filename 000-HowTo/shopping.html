@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bring!</title>
+    <script src="/vendor/bootstrap-5.3.2-dist/css/bootstrap.css"></script>
+</head>
+<body>
+    <div class="wrapper">
+        
+        <h1>Shopping list</h1>
+        
+        <div class="input-group mb-3">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Geben Sie ein neues Produkt ein"
+                            aria-label="Neues Produkt"
+                            aria-describedby="add-product"
+                            id="new-product"
+                        />
+                        <button
+                            class="btn btn-outline-secondary"
+                            type="button"
+                            id="add-product"
+                        >
+                            Produkt hinzufügen
+                        </button>
+                    </div>
+
+                    <div id="product-list">
+                        <!-- Here comes dynamic HTML -->
+                    </div>
+      </div>
+    </div>
+    <script src="/vendor/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+    <script src="js/shopping.js"></script>
+    <script src="../vendor/jquery-3.7.1.min.js"></script>
+    <script src="../vendor/js.cookie.min.js"></script>
+
+</body>
+</html>

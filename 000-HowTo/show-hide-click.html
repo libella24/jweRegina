@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Button mit jQuery</title> 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+</head> 
+<body> 
+ 
+<!-- Ein Button mit der ID "myButton" --> 
+<button id="myButton">Klick mich!</button> 
+ 
+<!-- Ein Platzhalter für den Beispieltext --> 
+<p id="exampleText" style="display: none;">Das ist ein Beispieltext!</p> 
+ 
+<script> 
+  // jQuery: Warte, bis das Dokument vollständig geladen ist 
+  $(document).ready(function() { 
+    // Finde den Button mit der ID "myButton" und füge einen Klick-Event-Handler hinzu 
+    $("#myButton").click(function() { 
+      // Funktion wird ausgeführt, wenn der Button geklickt wird 
+ 
+      // Zeige den versteckten Beispieltext an 
+      $("#exampleText").show(); 
+    }); 
+  }); 
+</script> 
+ 
+</body> 
+</html>

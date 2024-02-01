@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="de"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Document</title> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+</head> 
+<body> 
+  <button id="myButton">Click me!</button> 
+  <div id="info"></div> 
+  
+</div> 
+ 
+ 
+  
+<script> 
+   $("#myButton").on("click", function () { 
+    console.log("hey! you clicked me"); 
+    $(`<p>Weitere Infos siehe unter "events.html" unter 014-jquery-practice</p>`).appendTo("#info"); 
+    }); 
+  /* 
+$( "#details" ).on( "click", function() { 
+  alert( "Handler for `click` called." )}; 
+ 
+} ); 
+//Bei Klick ins Dokument wird ein Text angezeigt 
+document.addEventListener("click", myFunction); 
+ 
+ 
+ 
+function myFunction() { 
+  document.getElementById("click").innerHTML = $("#AGB"); 
+} 
+ 
+//Text zum Wegklicken --ACHTUNG: jQuery ist oben eingebunden! 
+$("button").on("click", function(){ 
+  $(this).hide(); 
+}); 
+*/ 
+</script> 
+ 
+ 
+ 
+</body> 
+</html> 

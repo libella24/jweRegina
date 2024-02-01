@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+</script> 
+</head> 
+<body> 
+  <button id="click">Enter</button> 
+  
+  <div id="AGB"></div> 
+   
+ 
+<script> 
+   //<button>Set text content for all p elements</button> 
+//$(document).ready(function(){ 
+  $("click").click(function(){ 
+    $("#AGB").text("Hello world!"); 
+    $("#AGB").append(`<p Bitte lesen Sie jetzt unsere 32seitigen AGBs durch!</p>`); 
+  }); 
+ 
+//$(".greeting2").text( 
+ // $(".greeting2").text() + " // Wow, that changes everything!"

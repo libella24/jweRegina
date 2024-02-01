@@ -1,0 +1,32 @@
+ 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Textfeld zurücksetzen mit jQuery</title> 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+</head> 
+<body> 
+ 
+<!-- Ein Textfeld mit der ID "meinTextfeld" --> 
+<input type="text" id="meinTextfeld" value="Vorheriger Inhalt"> Dies ist eine jQuery-Methode, die den Wert des ausgewählten Elements zurückgibt. Wenn es sich um ein Eingabefeld handelt, gibt val() den eingegebenen Text zurück. Bei anderen Formularelementen gibt es entsprechende Werte zurück. 
+Zusammengefasst wird also der Wert des ausgewählten Formularelements in der Variable wert gespeichert. Dies wird oft in Event-Handlern verwendet, wenn Sie den aktuellen Wert eines Formularelements benötigen, z.B. wenn auf einen Button geklickt wird oder ein Formular abgeschickt wird. 
+</input> 
+ 
+<!-- Ein Button mit der ID "zuruecksetzenButton" --> 
+<button id="zuruecksetzenButton">Textfeld zurücksetzen</button> 
+ 
+<script> 
+  // jQuery: Warte, bis das Dokument vollständig geladen ist 
+  $(document).ready(function() { 
+    // Füge einen Klick-Event-Handler zum Zurücksetzen-Button hinzu 
+    $("#zuruecksetzenButton").click(function() { 
+      // Setze den Inhalt des Textfeldes zurück 
+      $("#meinTextfeld").val(''); 
+    }); 
+  }); 
+</script> 
+ 
+</body> 
+</html> 

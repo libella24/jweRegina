@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Arrays</title> 
+    <link rel="stylesheet" href="/vendor/bootstrap-5.3.2-dist/css/bootstrap-grid.css"> 
+</head> 
+<body> 
+     
+</body> 
+</html> 
+<script> 
+ 
+// Array  
+// (erste Position ist 0 !!!!) 
+// .length() – Array.length = länge des Arrays  
+// .push() – hängt Elemente an ENDE eines Arrays (Methode) 
+// .unshift() – hängt Elemente an ANFANG eines Arrays (Methode) 
+// .pop() – entfernt das LETZTE Element eines Arrays (Methode) 
+// .shift() – entfernt das ERSTE Element eines Arrays (Methode) 
+// .slice() – extrahiert einen Teil des Arrays (Methode)  
+//     Array.slice(anfang [, ende]) (-1 = letzter Eintrag, -2 Vorletzter usw.) 
+// .forEach() –  
+// .indexOf() – durchsucht Array nach gesuchten Begriff 
+// .join() – verbindet alle Elemente eines Arrays zu einer Zeichenkette (Methode) 
+// .sort – sortieren 
+ 
+let persons = [ 
+    ["Erik", "Monika"], 
+    ["Paula", "Johannes", "Nadja"]]; 
+     
+    for (let course of persons) { 
+        for (let person of persons){ 
+            console.log(person); 
+        }; 
+ 
+ 
+ 
+// Neues Item hinzufügen (PUSH) 
+// ============================= 
+let newStudent = "Johannes" 
+persons.push(newStudent); 
+ 
+// Neues Item am Anfang hinzufügen (UNSHIFT) 
+// ========================================= 
+persons.unshift("Nadja"); 
+ 
+// Auf  Item zugreifen (CONSOLE.LOG[...]) 
+// ====================================== 
+console.log(persons[0]); 
+ 
+// Anzahl er Items ausgeben (LENGTH) 
+// ================================= 
+persons.length; 
+alert("In dem Kurs sind "+ persons.length + " Teilnehmer."); 
+ 
+ 
+// Letztes Item entfernen (POP) 
+// ============================ 
+persons.pop(); 
+ 
+// Erstes Item entfernen (SHIFT) 
+// ============================= 
+persons.shift(); 
+ 
+// Removed Item anzeigen 
+// ====================== 
+let removedPersons = persons.shift(); 
+console.log(removedPersons); 
+ 
+// Alle Einträge eines Arrays einzeln ausgeben (LET person/course,... OF array) 
+// =============================================================== 
+for (let person of persons) { 
+    console.log(person); 
+}; 
+// Alle Einträge aneinanderhängen 
+// =============================== 
+let output = "In unserem Kurs sind folgende Personen:"; 
+for (let person of persons) { 
+    output = output + person  + ", "; //der Liste wird eine weitere Person angehängt 
+     
+} 
+console.log(output); 
+ 
+// Verschachtelte Arrays 
+// ===================== 
+let persons = [ 
+    ["Erik", "Monika"], 
+    ["Paula", "Johannes", "Nadja"]]; 
+     
+     
+    for (let course of persons) { 
+        for (let person of persons){ 
+            console.log(person); 
+        } 
+     
+    </script> 
+ 
+    <script src="/vendor/bootstrap-5.3.2-dist/css/bootstrap.js"></script> 
+    <script src="/vendor/jquery-3.7.1.min.js"></script> 

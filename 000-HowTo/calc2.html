@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Calculator</title> 
+    <link 
+            rel="stylesheet" 
+            href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css" 
+        /> 
+</head> 
+<body> 
+  <div class="wrapper"> 
+    <div class="display"> 
+      <input type="text" value="0" readonly></input> 
+    </div> 
+    <div class="button"> 
+      <table> 
+        <tr> 
+          <td><button id="num" onclick="insrt(1)">1</button></td> 
+          <td><button id="num" onclick="insrt(2)">2</button></td> 
+          <td><button id="num" onclick="insrt(3)">3</button></td> 
+          <td><button id="num" onclick="insrt('+')">+</button></td> 
+        </tr> 
+        <tr> 
+          <td><button id="num" onclick="insrt(4)">4</button></td> 
+          <td><button id="num" onclick="insrt(5)">5</button></td> 
+          <td><button id="num" onclick="insrt(6)">6</button></td> 
+          <td><button id="num" onclick="insrt('-')">-</button></td> 
+        </tr> 
+        <tr> 
+          <td><button id="num" onclick="insrt(7)">7</button></td> 
+          <td><button id="num" onclick="insrt(8)">8</button></td> 
+          <td><button id="num" onclick="insrt(9)">9</button></td> 
+          <td><button id="num" onclick="insrt('*')">x</button></td> 
+        </tr> 
+        <tr> 
+          <td><button id="exp" onclick="cl()">C</button></td> 
+          <td><button id="num" onclick="insrt(0)">0</button></td> 
+          <td><button id="exp" onclick="eql()">=</button></td> 
+          <td><button id="num" onclick="insrt('/')">/</button></td> 
+        </tr> 
+      </table> 
+    </div> 
+  </div> 
+  <script> 
+    function insrt(num){ 
+  if( $('.display input').val()==0) 
+   $('.display input').val(''); 
+  $('.display input').val($('.display input').val()+num); 
+} 
+function eql(){ 
+  $('.display input').val(eval($('.display input').val())); 
+} 
+function cl(){ 
+  $('.display input').val(0); 
+} 
+ 
+ 
+ 
+  </script> 
+ 
+  <!-- Libraries --> 
+  <script src="../vendor/bootstrap-5.3.2-dist/js/bootstrap.js"></script> 
+  <script src="../vendor/jquery-3.7.1.min.js"></script> 
+  <script src="../vendor/js.cookie.min.js"></script>   
+</body> 
+</html> 

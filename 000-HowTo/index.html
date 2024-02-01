@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="/vendor/bootstrap-5.3.2-dist/css/bootstrap.css">
+</head>
+<body>
+    <h1>Einkaufsliste</h1>
+    
+    <button id="shopping_list" type="button" class="btn btn-primary">Einkaufsliste im Controller anzeigen</button><br/>
+    <p id="demo"></p>
+    <p id="next"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    
+    <script>
+        document.getElementById("demo3").innerHTML = "My First JavaScript";
+        </script>
+
+    <button onclick class="btn btn-primary"="window.print()">Print this page</button>
+
+    <h2>Ergebnisausgabe eines Schiebereglers</h2>
+    <label for="volume">Lautstärke:</label>
+    <input type="range" id="volume" value="50">
+    <output id="output" for="volume">50</output>
+   
+    <br><p>Wert des Schiebereglers wird mit dem input-Event ausgelesen und im output-Element wieder ausgegeben.</p> <br>
+
+    <h1>Thermostat</h1>
+
+    <div id="display" class="card-body pb-4"></div>
+    <div class="container">
+        <div class="row g-3">
+            <button 
+                id="tempUp"
+                class="btn btn-primary"
+                onclick="changeTemperature('up')">+
+            </button>
+
+            <button
+                id="tempDown"
+                class="btn btn-primary"
+                onclick="changeTemperature('down')">-
+            </button>
+        </div>
+    </div>
+    <script src="js/regina.js"></script>
+    <script src="../vendor/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+    <script src="/vendor/jquery-3.7.1.min.js"></script>
+    
+</body>
+</html> 

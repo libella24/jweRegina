@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Element entfernen mit jQuery</title> 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+</head> 
+<body> 
+ 
+<!-- Ein div-Element mit der ID "elementToRemove" --> 
+<div id="elementToRemove"> 
+  <p>ACHTUNG: Nachdem das Skript ausgeführt wurde, wird das Element mit der ID "elementToRemove" nicht mehr im HTML-Dokument vorhanden sein. Beachte, dass dies das Element selbst und alle seine untergeordneten Elemente entfernt.</p> 
+</div> 
+ 
+<script> 
+  // jQuery: Warte, bis das Dokument vollständig geladen ist 
+  $(document).ready(function() { 
+    // Element entfernen 
+    $("#elementToRemove").remove(); 
+  }); 
+</script> 
+ 
+</body> 
+</html>

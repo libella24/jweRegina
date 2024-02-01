@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>map key-value-pairs</title> 
+</head> 
+<body> 
+ 
+    <p id="demo"></p> 
+ 
+<script> 
+// Create a Map 
+const fruits = new Map([ 
+  ["apples", 500], 
+  ["bananas", 300], 
+  ["oranges", 200] 
+]); 
+ 
+// Create a Map 
+const fruits = new Map(); 
+ 
+// Set Map Values 
+fruits.set("apples", 500); 
+fruits.set("bananas", 300); 
+fruits.set("oranges", 200); 
+ 
+// Change values 
+ 
+fruits.set("apples", 200); 
+ 
+ 
+ 
+document.getElementById("demo").innerHTML = fruits.get("apples"); 
+ 
+ 
+</script> 
+     
+</body> 
+</html>

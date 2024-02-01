@@ -1,0 +1,54 @@
+!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Google API GET Request with jQuery</title> 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+</head> 
+<body> 
+ 
+    <iframe 
+  width="600" 
+  height="450" 
+  style="border:0" 
+  loading="lazy" 
+  allowfullscreen 
+  referrerpolicy="no-referrer-when-downgrade" 
+  src="https://www.google.com/maps/embed/v1/place?key=   
+    &q=Space+Needle,Seattle+WA"> 
+</iframe> 
+ 
+<script> 
+  $(document).ready(function() { 
+    // Replace 'YOUR_API_KEY' with your actual Google API key 
+    var apiKey = 'AIzaSyC5P2HLQQsGKIlNubjOExOCuXbppIQjEHA'; 
+     
+    // Specify the Google Maps Geocoding API endpoint 
+    var apiUrl = 'https://maps.googleapis.com/maps/api/geocode/json'; 
+ 
+    // Example parameters for geocoding an address 
+    var params = { 
+      address: '1600 Amphitheatre Parkway, Mountain View, CA', 
+      key: apiKey 
+    }; 
+ 
+    // Make a GET request using $.ajax() 
+    $.ajax({ 
+      url: apiUrl, 
+      type: 'GET', 
+      data: params, 
+      success: function(data) { 
+        // Handle the successful response 
+        console.log('Geocoding Data:', data); 
+      }, 
+      error: function(xhr, status, error) { 
+        // Handle errors 
+        console.error('Error:', status, error); 
+      } 
+    }); 
+  }); 
+</script> 
+ 
+</body> 
+</html>
