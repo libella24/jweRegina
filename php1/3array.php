@@ -89,10 +89,10 @@
     echo $personen[0]["ort"]; //Array - Index - inneres Array/gewünschter Eintrag
     echo "<br><br>";
 
+    //Ausgabe Ich bin Herbert, bin 18 Jahre alt und habe ein Guthaben von 100 EUR
+
     echo "Ich bin ".$personen[0]["name"]. ", bin ".$personen[2]["alter"]." Jahre alt und habe ein Guthaben von ". $personen[3]["guthaben"]." EUR.";
-
-
-
+    
 
     ?>
 
