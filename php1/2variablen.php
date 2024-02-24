@@ -15,6 +15,7 @@
     echo $alter; 
     echo " Jahre alt. <br><br>"; 
     //Fließkommazahl (float) definieren
+    //===================================
     $float = 13.7103;
     echo "Der EURO wird mit ";
     echo $float;
@@ -22,9 +23,13 @@
 
     echo "<br><br>";
     //Text (string) einer Variable zuweisen und ausgeben
+    //===================================================
     $name = "Peter";
+    //ACHTUNG: Variablen im Text
+    // Bei doppelten Hochkomma kann Variable im Text enthalten sein.
+    // Einfaches Hochkomma benötigt "."
+    // VERKETTUNG von Variable/Text-Kombi erfolgt durch "." (Punkt) 
     echo "Ich heiße $name.<br>";
-    //ACHTUNG: Einfaches Hochkomma benötigt "."
     echo 'Ich heiße ' . $name;
     echo "<br><br>";
     //Aufgabe "Ich habe Peters Stift.":
@@ -36,7 +41,9 @@
     echo "<br>";
     // Variante 2:
     echo 'Ich habe ' . $name. 's Stift.';
-    //Datentyp: Boolean
+
+    //Datentyp: Boolean (true/false)
+    //==============================
     echo "<br>";
     $wahr = true;
     echo ">".$wahr."< = true"; //1 wird ausgegeben
@@ -48,9 +55,9 @@
     echo ">".$nichts."<= null";
     echo "<br><br>";
 
-    //=========
-    //KONSTANTE
-    //=========
+    //=======================
+    //== KONSTANTE (const) ==
+    //=======================
     define("datenbank", "php23"); //Name, Text - alt, nicht verwenden
     echo datenbank;
     echo "<br>";

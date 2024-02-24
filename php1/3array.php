@@ -12,6 +12,8 @@
     //
     //Nummerisches Array definieren
     //==============================
+
+    // Der Index startet bei 0 (wie JavaScript)
     $namen = array ("Katharina", "Jonathan", "Julia", "Peter");
     echo $namen[0]. " und " . $namen[2];
     echo "<br><br>";
@@ -42,15 +44,16 @@
     print_r($person); //nur für den internen Gebrauch
     echo "</pre>";
     
-    //Ausgabe: "Markus (63) aus Salzburg
+    //Beispiel: "Markus (63) aus Salzburg
+    //Variante 1 - Variablen mit Punkt aneinanderketten
     echo $person["name"] . " (". $person["alter"]. ") aus ". $person["ort"];
     echo "<br><br>";
-    //Variante 2: 
+    //Variante 2 - in einer Zeile zusammenfassen 
     echo "{$person["name"]} ({$person["alter"]}) aus {$person["ort"]}";
     echo "<br><br>";
 
-    //Assoziatives Array erweitern
-    //=============================
+    // Assoziatives Array erweitern
+    // =============================
 
     $person["guthaben"] = 100;
 
@@ -58,8 +61,10 @@
     print_r($person); //nur für den internen Gebrauch
     echo "</pre>";
 
-    //Mehrdimensionales Array (Array in einem Array)
-    //===============================================
+    // Mehrdimensionales Array (Array in einem Array)
+    // ===============================================
+
+    // Ein Array hat mehrere Arrays
 
     $personen = array ( //numerisches Array - jeder Eintrag (nummer) hat ein Array
         array(   //assoziatives Array
@@ -77,19 +82,22 @@
             "alter" => 18,
             "ort" => "Schörfling"
         ),
-        $person   
+        $person   //Variable wurde im Scriptverlauf zuvor erstellt
     );
+
+    // Arrays mit Index usw. ausgeben
+
     echo "<pre>"; // formatiert als Liste und mit Array-Bezeichnung
     print_r($personen); //nur für den internen Gebrauch
     echo "</pre>";
     echo "<br><br>";
 
-    //Ausgabe Linz
+    // Ausgabe Linz
 
     echo $personen[0]["ort"]; //Array - Index - inneres Array/gewünschter Eintrag
     echo "<br><br>";
 
-    //Ausgabe Ich bin Herbert, bin 18 Jahre alt und habe ein Guthaben von 100 EUR
+    // Ausgabe Ich bin Herbert, bin 18 Jahre alt und habe ein Guthaben von 100 EUR.
 
     echo "Ich bin ".$personen[0]["name"]. ", bin ".$personen[2]["alter"]." Jahre alt und habe ein Guthaben von ". $personen[3]["guthaben"]." EUR.";
     
