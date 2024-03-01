@@ -19,6 +19,8 @@
     echo "</table border='1'>";
     echo "</tr>";
 
+    echo "<br>";
+
     // 1x1 in einer Tabelle darstellen
 
 
@@ -31,7 +33,7 @@
         
     for ($spalte=1; $spalte<=10; $spalte++){
         echo "<td>";
-        if (($spalte * $zeile) % 7 !=0) echo $spalte * $zeile; //%=Modulo - 7er Reihe wird ausgeblendet
+        if (($spalte * $zeile) % 7 !=0) echo $spalte * $zeile; //wenn durch 7 Teilbar, dann --> MODULO %=Modulo - 7er Reihe wird ausgeblendet
         echo "</td>";
     }
     echo "</tr>";

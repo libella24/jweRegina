@@ -15,11 +15,16 @@
     $namen = array("Peter", "Sonja", "Klara", "Klaus", "Franziska", "Mario", "Christian", "Mario", "Peter");
 
     //Elemente in einem Array zählen (count)
+    //======================================
 
     echo count($namen);
     echo "<br>";
 
+    //kann auch einer Variable zugeordnet werden, um diese später wieder verwendne zu können
+   // $anzahl count ($namen);
+
     //Zufälligen Namen ausgeben (array_rand)
+    //======================================
 
     $index = array_rand($namen); // gibt nur den Index aus
     echo $index;
@@ -33,6 +38,7 @@
     echo "<br><br>";
 
     //Doppelte Werte entfernen
+    //=========================
 
     array_unique($namen); //bestehendes Array bleibt bestehen, 
     //generiert neues Array mit uniquen Werten
@@ -43,8 +49,10 @@
     echo "<br><br>";
 
     //Prüfen, ob ein Wert im Array existiert (in_array)
+    //===================================================
 
     // liefert nur ja oder nein retour, deshalb if-else
+    // z.B. Benutzer anlegen - nicht die ganze Liste anzeigen, nur Bitte wähle anderen Namen (Benutzername ODER Kennwort falsch!) Alles offen lassen - Sicherheit
 
     if (in_array("Mario", $namen)){
         echo "Diese Person ist registriert";
@@ -54,29 +62,39 @@
     echo "<br><br>";
 
     // Alphabetisch aufsteigend nach Namen sortieren (asort)
+    //=======================================================
 
-    // behält den Index
+    // Eintrag behält den Index
+    // z.B. Drop-down alphabetisch anzeigen aber ID (die in der DB ist) gleich zu lassen
 
     asort($namen);
     echo "<pre>"; // formatiert als Liste und mit Array-Bezeichnung
     print_r($namen); //nur für den internen Gebrauch
     echo "</pre>";
 
-    // Wert im Nachhinein hinzufügen
+    // Wert im Nachhinein hinzufügen (array_push)
+    //=======================================================
     $namen[] = "Herbert";
     array_push($namen, "Gerhard", "Regina");
     echo "<pre>"; // formatiert als Liste und mit Array-Bezeichnung
     print_r($namen); //nur für den internen Gebrauch
     echo "</pre>";
 
-    // Sortieren und Indizes neu zuweisen
-
-    // ACHTUNG! Der Index wird dadurch neu vergeben. In der Datenbank bleibt aber der bisherige Index!!!
+    // Sortieren und Indizes neu zuweisen (sort)
+    //=======================================================
+    // ACHTUNG! Der Index wird dadurch neu vergeben. 
+    // In der Datenbank bleibt aber der bisherige Index!!!
 
     sort($namen);
     echo "<pre>"; // formatiert als Liste und mit Array-Bezeichnung
     print_r($namen); //nur für den internen Gebrauch
     echo "</pre>";
+
+    echo "<br><br>";
+
+    // Bsp: Grad in Fahrenheit umrechnen
+
+    
 
    
 

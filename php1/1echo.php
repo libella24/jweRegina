@@ -7,13 +7,16 @@
 </head>
 <body>
     <h1>Echo mit PHP</h1>
-    <!-- Kommentar  STRG + # -->
+    <!-- HTML Kommentar  STRG + #
+    wird im Browser angezeigt -->
     <?php 
     echo "Hallo Welt!<br>"; //Zeilenumbrüche können als HTML Tag reingeschrieben werden
     echo "Hallo "; 
     echo "Welt"; 
     /* Das hier ist ein mehrzeiliger Kommentar
-    den ich natürlich innerhalb des PHP Bereichs schreibe */
+    den ich natürlich innerhalb des PHP Bereichs schreibe
+    Der PHP Kommentar wird nicht an den Browser ausgegeben
+    */
     ?>
     
 </body>
