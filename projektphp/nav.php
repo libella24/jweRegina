@@ -16,6 +16,8 @@
           // Unveränderlichen Code übergeben - assoziatives Array
           // =====================================================
 
+          // key = Seite/Dateiname, Value= angezeigter Wert im Nav-Bar
+
           $nav_punkte = array(
             "home" => "Startseite",
             "leistungen" => "Leistungen",
@@ -32,11 +34,13 @@
 
           // Listeneintrag dynamisch erstellen (bezieht sich auf Site-Namen in der index.php)
 
-          foreach ($nav_punkte as $href => $nav_punkt) {
+          foreach ($nav_punkte as $href => $nav_punkt) { // foreach --> alle Navigationspunkte sollen durchiteriert werden.
             echo '<li ';
-            if ($site == $href) echo 'class="active"';
+            if ($site == $href) echo 'class="active"'; //wenn die Seite die aufgerufene ist, 
+            // dann soll der Text" class=active" verwendet werden. 
+            // $site = das, was in die URL geschrieben wird
             echo '><a href="?seite=';
-            echo $href . '">' . $nav_punkt;
+            echo $href . '">' . $nav_punkt; //Zugriff auf Index (z.B "home" und auf den Wert (z.B. "Startseite))
             echo "</a></li>";
           }
 

@@ -1,6 +1,6 @@
 <?php
 
-// "$include_datei" definieren:
+// Seite aufrufen
 // ==============================
 
 if (empty($_GET["seite"])){//Existiert die Seite? Fehler abwenden
@@ -14,7 +14,7 @@ if ($site == "home") {
     $metadescription = "Seite, auf der man zuerst landet.";
 } else if ($site == "leistungen") {
     $include_datei = "leistungen.php";
-    $seitentitel = "FrisierenLeistung";
+    $seitentitel = "Waschen-schneiden-föhnen";
     $metadescription = "Anzeige der Leistungen, die bei diesem Friseur angeboten werden";
 } else if($site == "kontakt") {
     $include_datei = "kontakt.php";
