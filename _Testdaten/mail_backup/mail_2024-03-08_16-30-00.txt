@@ -1,0 +1,4 @@
+Anfrage über Kontaktformular:
+		Name:regi
+		E-Mail:reginafleckl@me.com;
+		Nachricht:regi
