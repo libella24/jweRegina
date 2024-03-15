@@ -1,8 +1,10 @@
 <?php
     include "funktionen.php"; // DB-Zugriff ermöglichen:
+      // ist_eingeloggt(); // Prüfung, ob der User eingeloggt ist, wenn nein, dann wird er zur Login-Seite weitergeleitet.
     include "kopf.php";
 ?>
 <h1>Zutaten</h1>
+<p><a href="zutaten_neu.php">Neue Zutat anlegen</a></p>
 
 <?php
 

@@ -12,14 +12,14 @@ DESCRIBE TABLE adressen;
 
 DROP TABLE adressen;
 
-Spalte hinzufügen
-=================
+Spalte hinzufügen (alter table - add column)
+=============================================
 
 ALTER TABLE adressen 
 ADD COLUMN strasse VARCHAR(255);
 
-Spalte entfernen
-================
+Spalte entfernen (alter table - drop column)
+=============================================
 
 ALTER TABLE adressen 
 DROP COLUMN strasse
@@ -37,8 +37,8 @@ Standard NULL = nullable - es muss kein Eintrag drinnen sein
 
 Autoincrement - nächster Eintrag bekommt die nächsthöhere ID
 
-Daten einfügen/updaten/löschen
-==============================
+Daten einfügen/updaten/löschen (insert)
+========================================
 
 INSERT INTO adressen SET id = '1', vorname = 'Regina', nachname = 'Fleckl';
 
@@ -56,6 +56,8 @@ VALUES (
 '1', 'Marillenknödel', 'Mische alle Zutaten zusammen und verarbeite sie zu einem Teig. blablabla...Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam', '2'
 );
 
+Daten ändern (update)
+=====================
 
 UPDATE adressen
 SET vorname = 'Max' 
@@ -63,13 +65,17 @@ WHERE nachname LIKE 'M%';
 
 UPDATE php2.benutzer SET email = 'Pamela@vla.com' WHERE id =5;
 
+Daten entfernen (delete, truncate)
+===================================
+
 DELETE FROM adressen WHERE id = 1;
 
 TRUNCATE TABLE adressen;
 
-Daten selektieren
-=================
+Daten selektieren (select)
+===========================
 SELECT...
+standardmäßig wird nach Erstellungszeitpunkt sortiert
 
 Ergebnis sortieren
 ==================
@@ -85,6 +91,7 @@ CREATE TABLE adressen (id INT AUTO_INCREMENT, vorname VARCHAR(255), ....)
 Index auf Feld legen
 ====================
 ALTER TABLE `benutzer` ADD INDEX ( `benutzername` ) ;
+multi_idx (mehrere Spaltennamen können angegeben werden)
 
 
 Referenzen
@@ -108,3 +115,7 @@ bei n:m Beziehnungen
 INSERT INTO `php2`.`zutaten_zu_rezepte` (`id`, `rezepte_id`, `zutaten_id`) VALUES ('1','2')
 
 
+index 
+= Spalte hat dann Inhaltsverzeichnis und muss nicht immer alle Werte durchschauen, wenn eine Anfrage gemacht wird.
+
+zutaten zu rezepte = Mappingtabelle, um eine m:n Beziehung herzustellen

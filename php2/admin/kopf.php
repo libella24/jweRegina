@@ -13,6 +13,8 @@
         <ul>
             <li><a href="index.php">Start</a></li>
             <li><a href="zutatenliste.php">Zutaten</a></li>
+            <li>Eingeloggt als: <?php echo $_SESSION["benutzername"]?></li>
+            <li> <a href="logout.php">Ausloggen</a></li>
         </ul>
 
 
