@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 15. Mrz 2024 um 20:22
+-- Erstellungszeit: 16. Mrz 2024 um 15:24
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -41,7 +41,7 @@ CREATE TABLE `benutzer` (
 --
 
 INSERT INTO `benutzer` (`id`, `benutzername`, `email`, `passwort`, `anzahl_logins`, `last_login`) VALUES
-(1, 'Herbert', 'mailadressea@vla.com', '$2y$10$mRvKbvSjGAsa1iuoWxcyEu5ZmmlD9Grxc/wbPoUdU/GTDUEX3g9zO', 12, '2024-03-15 19:20:41'),
+(1, 'Herbert', 'mailadressea@vla.com', '$2y$10$mRvKbvSjGAsa1iuoWxcyEu5ZmmlD9Grxc/wbPoUdU/GTDUEX3g9zO', 13, '2024-03-16 09:41:05'),
 (2, 'Regina', 'r.fleckl@me.com', '$2y$10$ZUf6dsZGw83VAz1oAf1ZS.TIqxbcmBgYAp0mLBsoIVeT3b9DTXonC', 2, '2024-03-15 18:01:14'),
 (3, 'Gerhard', 'gertschi@bla.com', '$2y$10$sJz8B/6fLtElwoTaQDKaS.EckZSG7EgqFVOjz3qntUoAMcqxDn/gG', 1, '2024-03-15 17:58:46'),
 (7, 'Rudi', 'rudiratte@online.com', '$2y$10$36SdXEqcjN3/0o8Nj5suLuVpRwotFrmScgj.P2gEn4F.nJfStkNPC', 0, '0000-00-00 00:00:00'),
@@ -90,8 +90,15 @@ CREATE TABLE `zutaten` (
 
 INSERT INTO `zutaten` (`id`, `titel`, `menge`, `einheit`, `kcal_pro_100`) VALUES
 (1, 'Zwiebel', 1, 'Stück', 100),
-(2, 'Mehl', 100, 'Gramm', 10),
-(3, 'Eier', 1, 'Stück', 250);
+(2, 'Mehl', 150, 'Gramm', 10),
+(3, 'Eier', 1, 'Stück', 250),
+(4, 'Thymian', 1, 'Msp', 3),
+(5, 'Spinat', 100, 'Gramm', 15),
+(6, 'Joghurt', 100, 'Gramm', 68),
+(7, 'Cheddar', 100, 'Gramm', 500),
+(8, 'Rindfleisch', 100, 'Gramm', 0),
+(9, 'Hendlfilet', 100, 'Gramm', NULL),
+(10, 'Karotten', 1, 'Stück', 23);
 
 -- --------------------------------------------------------
 
@@ -166,7 +173,7 @@ ALTER TABLE `rezepte`
 -- AUTO_INCREMENT für Tabelle `zutaten`
 --
 ALTER TABLE `zutaten`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT für Tabelle `zutaten_zu_rezepte`

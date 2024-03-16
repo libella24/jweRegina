@@ -3,7 +3,7 @@ session_start();
 
 // Ausloggen - Variante 1
 // =======================
-unset($_SESSION["eingeloggt"]);
+unset($_SESSION["eingeloggt"]); 
 
 // Ausloggen - Variante 2
 // =======================

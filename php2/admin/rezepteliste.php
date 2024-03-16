@@ -4,13 +4,13 @@
     include "kopf.php";
 ?>
 <h1>Zutaten</h1>
-<p><a href="zutaten_neu.php">Neue Zutat anlegen</a></p>
+<p><a href="rezepte_neu.php">Neues Rezept anlegen</a></p>
 
 <?php
-// (1) Alle Zutaten selektieren
+// (1) Alle Rezepte selektieren
 // =============================
 
-$result = mysqli_query($db, "SELECT * FROM zutaten ORDER BY titel ASC");
+$result = mysqli_query($db, "SELECT * FROM rezepte ORDER BY titel ASC");
 
 // Zwischenzeitlich das Array anschauen, das mit der Abfrage herauskommt
 //print_r($result);
@@ -19,9 +19,9 @@ echo "<table border='1'>";
     echo "<thread>";
         echo "<tr>";
             echo "<th> Titel</th>";
-            echo "<th> Kcal pro 100 g</th>";
-            echo "<th> Menge</th>";
-            echo "<th> Einheit</th>";
+            echo "<th> Beschreibung</th>";
+            echo "<th> Benutzer ID</th>";
+            echo "<th> Aktionen</th>";
         echo "</tr>";
     echo "</thread>";
 echo "<tbody>";
@@ -32,9 +32,8 @@ echo "<tbody>";
 while ($row = mysqli_fetch_assoc($result)){
     echo "<tr>";
     echo "<td>". $row["titel"] . "</td>";
-    echo "<td>". $row["kcal_pro_100"] . "</td>";
-    echo "<td>". $row["menge"] . "</td>";
-    echo "<td>". $row["einheit"] . "</td>";
+    echo "<td>". $row["beschreibung"] . "</td>";
+    echo "<td>". $row["benutzer_id"] . "</td>";
     echo "<td>". "<a href='zutaten_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>". "</td>"; // dieser Link ist die URL beim Aufruf der Seite "zutaten_bearbeiten"
     echo "<td>". "<a href='zutaten_entfernen.php?id={$row["id"]}'>Entfernen</a>". "</td>"; // dieser Link ist die URL beim Aufruf der Seite "zutaten_bearbeiten"
     echo "</tr>";

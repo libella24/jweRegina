@@ -28,8 +28,17 @@ function ist_eingeloggt(){
 // =============================================
 function escape($post_var){
     global $db; //keywort, global um die $db variable vom globalen scope zu verwenden
-   return mysqli_real_escape_string($db, $post_var);
+    return mysqli_real_escape_string($db, $post_var);
 }
 
+// mysqli_query in eine Funktion auslagern
+// ========================================
+
+function query ($sql_befehl) { // $sql_befehl ist eine selbstdefinierte Variable, die nur innerhalb der Funktion gültig ist. 
+    global $db; // Keyword "global", um die $db Variable vom globalen Scope zu übernehmen
+    $result = mysqli_query($db, $sql_befehl);
+    return $result;
+}
+// Bisherige SQL-Abfragen "$result = mysqli_query($db,"SELECT * FROM zutaten WHERE titel = '{$sql_titel}'"); brauchen dann nur noch mit "query" aufgerufen werden.
 
 ?>

@@ -31,10 +31,11 @@ if(!empty($_POST)){
                 $_SESSION["eingeloggt"] = true;
                 $_SESSION["benutzername"] = $row["benutzername"];
 
-                // Anzahl der Logins in DB speichern 
+                // Anzahl der Logins in DB speichern  
                 // Im DB-Feld darf nicht NULL definiert sein, sonst kann keine Berechnung stattfinden.
                 // Last login speichern: im DB Feld muss NULL erlaubt sein. 
-                mysqli_query($db, "UPDATE benutzer SET 
+                // 2 Prüfungen können in einem Statement erfasst werden
+                query($db, "UPDATE benutzer SET 
                 anzahl_logins = anzahl_logins + 1,
                 last_login = NOW() 
                 WHERE id ={$row["id"]}");
