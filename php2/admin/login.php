@@ -53,7 +53,7 @@ if(!empty($_POST)){
 
                 $_SESSION["eingeloggt"] = true;
                 $_SESSION["benutzername"] = $row["benutzername"];
-
+                $_SESSION["benutzer_id"] = $row["id"];
                 // (9) Anzahl der Logins und Last Login in DB speichern 
                 //     Im DB-Feld darf nicht NULL definiert sein, sonst kann keine Berechnung stattfinden.
                 //     Last login speichern: im DB Feld muss NULL erlaubt sein. 
@@ -68,7 +68,7 @@ if(!empty($_POST)){
                 header("Location: index.php");
             } else {
                 //Passwort war falsch
-                $error = "Benutzername oder Passwort sind falsch!"; kxß
+                $error = "Benutzername oder Passwort sind falsch!";
                 
             }
             } else {

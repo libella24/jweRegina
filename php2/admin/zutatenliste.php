@@ -35,6 +35,7 @@ while ($row = mysqli_fetch_assoc($result)){
     echo "<td>". $row["kcal_pro_100"] . "</td>";
     echo "<td>". $row["menge"] . "</td>";
     echo "<td>". $row["einheit"] . "</td>";
+    // die URL der Position wird erzeugt
     echo "<td>". "<a href='zutaten_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>". "</td>"; // dieser Link ist die URL beim Aufruf der Seite "zutaten_bearbeiten"
     echo "<td>". "<a href='zutaten_entfernen.php?id={$row["id"]}'>Entfernen</a>". "</td>"; // dieser Link ist die URL beim Aufruf der Seite "zutaten_bearbeiten"
     echo "</tr>";

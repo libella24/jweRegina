@@ -6,10 +6,12 @@ $errors = array();
 $erfolg = false;
 
 // (1) Prüfen, ob das Formular abgeschickt wurde
-// ===========================================
+// ==============================================
+//     funktioniert im Zusammenhang mit Formulareingaben ($_POST)
 
 if(!empty($_POST)){
     // (2) Alle Benutzereingaben auf Sonderzeichen prüfen
+    //     Im weiteren Programmverlauf werden nur die bereits geprüften Eingaben - $sql_xxx - verwendet.
 
     $sql_titel = escape($_POST["titel"]); // die DB wird geholt (siehe funktionen.php)
     $sql_kcal_pro_100 = escape($_POST["kcal_pro_100"]);

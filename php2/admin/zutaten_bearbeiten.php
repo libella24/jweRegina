@@ -11,18 +11,25 @@ $erfolg = false;
 // wenn das Formular abgeschickt wurde (die POSTs sind nicht leer)....
 
 if(!empty($_POST)){ // .... dann werden Daten validiert
-    $sql_titel = escape($_POST["titel"]); // die DB wird geholt (siehe funktionen.php)
+    // (2) Eingaben um Sonderzeichen bereinigen - Sicherheit
+    // ======================================================
+    $sql_titel = escape($_POST["titel"]); // Escape Funktion ist allgemein definiert (siehe funktionen.php)
     $sql_kcal_pro_100 = escape($_POST["kcal_pro_100"]);
     $sql_menge = escape($_POST["menge"]);
     $sql_einheit = escape($_POST["einheit"]);
 
+    // (3) Nach der Änderung darf der Titel nicht leer sein
+    // =====================================================
     if(empty($sql_titel)) { // darf nicht "titel" sein, weil hier ja die escape darauf liegt... oder so...
         $errors[]="Bitte geben Sie den Titel an."; 
+        // Man kann den Titel ändern. Allerdings darf es nicht eine andere ID mit diesem Titel geben. 
     } else { 
         $result = query("SELECT * FROM zutaten 
                             WHERE titel = '{$sql_titel}'
-                            AND id != '{$sql_id}'");
-    
+                            AND id != '{$sql_id}'"); //Gibt es diesen Titel mit anderer ID noch? 
+
+        // Das Ergebnis wird in ein Array gepackt
+        // =====================================
         $row = mysqli_fetch_assoc($result); 
 
         if($row){
@@ -46,8 +53,8 @@ if(!empty($_POST)){ // .... dann werden Daten validiert
             kcal_pro_100 = {$sql_kcal_pro_100}, 
             menge = {$sql_menge}, 
             einheit = '{$sql_einheit}'
-        WHERE id = '{$sql_id}'
-        ");
+        WHERE id = '{$sql_id}'  
+        "); // ACHTUNG: WHERE-Bedingung, damit nicht alle Datensätze irrtümlicherweise aktualisiert werden.
 
         $erfolg = true;
     }
