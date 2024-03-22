@@ -9,6 +9,20 @@
     <h1>If und Else in PHP</h1>
     <?php
     // Man stellt eine Frage, ob etwas wahr ist, wenn ja, dann...
+    // Man überprüft eine Bedingung
+
+    // Gerüst:
+    // =======
+    if(Bedingung)
+   {
+   Anweisung
+   };
+
+   $user = "Nils";
+
+   if($user == "Nils"){
+    echo "Hallo Nils";
+    }else{echo "Nils ist nicht da";} // else trifft immer dann ein, wenn wir "false" erhalten.
 
     // Vergleichen 5 == 5 
 
@@ -20,12 +34,15 @@
     // sonst Hallo
     // $time = 13; <-- brauchen wir nicht mehr, weil es die Funktion "date" (siehe php) gib
 
+    // Aktuelle Zeit festlegen:
     $time = date("G"); //die Zeitzone richtet sich nach dem Server, liefert einen Wert von 0-24
-
-    if ($time <=5) {
+    //  wenn es früher/gleich 5 Uhr ist, dann zeige "Schlaf gut":
+    if ($time <=5) {  
         echo "Schlaf gut!";
-    } else if ($time >= 6 && $time <= 9){ 
+    // wenn es ansonsten später/gleich 6 ist und (im Sinne von "vergleichen") früher gleich 9 ist, dann zeige "Guten Morgen": 
+    } else if ($time >= 6 && $time <= 9){ /
         echo "Guten Morgen!";
+        // Wenn es ansonsten 12 Uhr ist oder wenn es 18 Uhr ist, dann Zeige "Mahlzeit":
     } else if ($time == 12 || $time == 18){ //Vergleich --> nicht zuweisen (das wäre =), sondern vergleichen (==)
         echo "Mahlzeit!";
     } else if ($time >= 19 && $time <= 23){ // Gilt "Gute Nacht" zwischen 19 und 5 Uhr (wir haben durch die Funktion 
@@ -43,7 +60,19 @@
 
     //php.net = DOKUMENTATION
 
-    ?>
-    
-</body>
-</html>
+
+    // Vergleichsoperatoren
+// =====================
+
+// ==   Gleich
+// ===  Identisch
+// !=   Ungleich
+// !==  Nicht identisch
+// <    Kleiner als
+// <=   Kleiner gleich
+// >    Größer als
+// >=   Größer gleich
+
+
+
+
