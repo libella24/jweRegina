@@ -2,6 +2,7 @@
 
 // Session eröffnen (SESSION_START)
 // ================================
+// Erstellt eine $_SESSION, diese ist global verfügbar
 // Funktion ist notwendig, um  die $_SESSION zur Verfügung zu haben.
 session_start();
 

@@ -5,46 +5,51 @@ ist_eingeloggt();
 $errors = array();
 $erfolg = false;
 
-// Prüfen, ob das Formular abgeschickt wurde
+// (1) Prüfen, ob das Formular abgeschickt wurde
 // ===========================================
 
 if(!empty($_POST)){
+    // (2) Alle Benutzereingaben auf Sonderzeichen prüfen
+
     $sql_titel = escape($_POST["titel"]); // die DB wird geholt (siehe funktionen.php)
     $sql_kcal_pro_100 = escape($_POST["kcal_pro_100"]);
     $sql_menge = escape($_POST["menge"]);
     $sql_einheit = escape($_POST["einheit"]);
 
-    // Nur der Titel wird geprüft, ob er da ist...
-    // ===========================================
-
-    if(empty($sql_titel)) { // darf nicht "titel" sein, weil hier ja die escape darauf liegt... oder so...
-        $errors[]="Bitte geben Sie den Titel an."; 
+    // (3) Prüfung Titel darf nicht leer sein 
+    // ========================================
+    if(empty($sql_titel)) { // darf nicht "titel" sein, weil hier ja die escape darauf liegt.
+        $errors[]="Bitte geben Sie den Titel an."; // $errors Array wird befüllt
     } else {
-        // (1) Query absetzen
-        // ==================
+        // (4) Query absetzen: Gibt es diesen Titel schon?
+        // ================================================
             $result = query("SELECT * FROM zutaten 
             WHERE titel = '{$sql_titel}'");
-            // (2) Ergebnis in ein Array packen
+
+            // (5) Ergebnis in ein Array packen
             // =================================
-            // Datensatz aus mysqli in ein php Array umwandeln
-            
+            //     Datensatz aus mysqli in ein php Array umwandeln
             $row = mysqli_fetch_assoc($result); 
-            //print_r($row);
+            print_r($row);
 
-            // Prüfen, ob es diesen Titel schon gibt 
+            // (6) Prüfen, ob es diesen Titel schon gibt 
             // ======================================
-            // case-sensitiv, wenn das nicht extra abgefangen wird
-
-            if($row){
+            //     case-sensitiv, wenn das nicht extra abgefangen wird
+            if($row){  // schön kurz! Gibt's die Zeile schon? true/false
                 $errors[]="Diese Zutat existiert bereits"; // fragt die gesamte Row ab, ob in der Spalte Titel der exakte Titel besteht, oder nicht
-
             }
+
+    // (7) Prüfung, ob die Menge befüllt ist
+    // ======================================
     }
     if(empty($sql_menge)){
         $errors[]="Bitte geben Sie die Menge ein.";
     }
-    // Wenn keine Fehler existieren.....
-    if(empty($errors)){ /// Werte deren Wert NOCH nicht feststeht, sollen in der DB nicht mit 0 gespeichert werden, sondern mit NULL. Erst wenn der Wert 0 feststeht, dann soll 0 drinnen stehen.
+    
+    // (8) Werte deren Wert NOCH nicht feststeht...
+    //     sollen in der DB nicht mit 0 gespeichert werden, sondern mit NULL. 
+    //     Erst wenn der Wert 0 feststeht, dann soll 0 drinnen stehen.
+    if(empty($errors)){ 
         if($sql_kcal_pro_100 == ""){
             $sql_kcal_pro_100 = "NULL"; // wird dann leer angezeigt.
         }
@@ -54,7 +59,10 @@ if(!empty($_POST)){
         if($sql_einheit == ""){
             $sql_einheit = "NULL"; // wird dann leer angezeigt.
         }
-        // dann können wir die Zutat in die DB schreiben...
+
+        // (9) Zutat in die DB schreiben
+        // ==============================
+        //     Wenn keine Fehler existieren, dann können wir die Zutat in die DB schreiben...
         query("INSERT INTO zutaten SET 
         titel = '{$sql_titel}', 
         kcal_pro_100 = {$sql_kcal_pro_100}, 
@@ -66,7 +74,8 @@ if(!empty($_POST)){
     }
 }
 
-/// Werte deren Wert NOCH nicht feststeht, sollen in der DB nicht mit 0 gespeichert werden, sondern mit NULL. Erst wenn der Wert 0 feststeht, dann soll 0 drinnen stehen.
+// Werte deren Wert NOCH nicht feststeht, sollen in der DB nicht mit 0 gespeichert werden, sondern mit NULL. 
+// Erst wenn der Wert 0 feststeht, dann soll 0 drinnen stehen.
 // die single quotes müssen in der INSERT Query weg, damit die NULL-Regel angewendet 
 
 include "kopf.php";

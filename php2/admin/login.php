@@ -1,41 +1,64 @@
 <?php
 
-include "funktionen.php"; //Session wird gestartet, DB wird aufgerufen
+include "funktionen.php"; 
+// - session_start() - Session wird eröffnet
+// - mysqli_connect (DB, User, DB-Name) - DB wird aufgerufen
 
 //wurde das Formular abgeschickt
 //print_r($_POST);
+
+// (1) Prüfen, ob das Formular abgeschickt wurde
+//     wenn Daten eingegeben wurden = $_POST ist nicht leer, dann...
 if(!empty($_POST)){
-    //validieren, wenn Daten eingegeben wurden
-    if(empty($_POST["benutzername"]) || empty($_POST["passwort"])){
-        $error = "Benutzername oder Passwort ist leer.";
+    // (2)    Fehler ausgeben, wenn entweder der Benutzername oder das Passwort leer sind. 
+    if(empty($_POST["benutzername"]) || empty($_POST["passwort"])){ //OR, weil beide Felder geprüft werden, nicht entweder/oder
+        $error = "Benutzername oder Passwort ist leer."; // Fehlermeldung $error Array wird befüllt
     } else {
-        //Benutzername und Passwort werden übergeben
-        // --> in der DB nachsehen, ob der Benutzer existiert
+        //(3) Eingabe "username" um Sonderzeichen bereinigen
+        //    M Y S Q L I _ R E A L _ E S C A P E _ S T R I N G   (db, Post,[""])
+        //    Dem Post "username" wird die Variable "$sql_benutzername" zugewiesen. Gleichzeitig ist diese Variable von Sonderzeichen 
+        //    bereinigt. Im weiteren Programmverlauf soll nur mehr die Variable "$sql_benutzername" verwendet werden.
         
         $sql_benutzername = mysqli_real_escape_string($db, $_POST["benutzername"]); // bewahrt vor SQL Injections
         
-        // Datenbankzugriff und -Abfrage
+        //(4) Benutzer in der DB abfragen 
+        //    M Y S Q L I _ Q U E R Y   (db, "Statement")
+        //    die Benutzereingabe wird mit {'...'} formatiert
+        //    dem Abfrageergebnis wird die Variable "$result" zugewiesen
         $result = mysqli_query($db,"SELECT * FROM benutzer 
         WHERE benutzername = '{$sql_benutzername}'");
         //print_r($result);
-        // Datensatz aus mysqli in ein php Array umwandeln
+
+        //(5) Benutzer Abfrageergebnis in ein Array speichern
+        //    M Y S Q L I _ F E T C H _ A S S O C   (Abfrageergebnis)
         $row = mysqli_fetch_assoc($result); 
         //print_r($row);
+
+        //(6) Benutzer prüfen
         if($row){
-            //Benutzer existiert --> Passwort prüfen
-            // if($_POST["passwort"] == $row["passwort"]) { -- würde nur das eingegebene Passwort prüfen, wir brauchen die "password_verify" funktion und geben das eingegebene PW und den Hash aus der DB. password_verify schaut dann, ob diese beiden Werte zusammenpassen.
+            //(7) Passwort prüfen - PHP Standardfunktion
+            //    P A S S W O R D _ V E R I F Y   (eingebebenes PW, Hash)
+            //    Die Funktion "password_verify" prüft, ob das eingegebene Passwort mit dem DB-Hash der mit PASSWORD_HASH() erzeugt wurde,
+            //    validiert. (Vorteil: password_hash erzeugt unterschiedliche Schlüssel für gleich PW.)
+            //    if($_POST["passwort"] == $row["passwort"]) { -- würde nur das eingegebene Passwort prüfen, 
+            //    wir brauchen die "password_verify" funktion und geben das eingegebene PW und den Hash aus der DB. 
                 if(password_verify($_POST["passwort"], $row["passwort"])){
                 //Passwort stimmt überein
                 //echo "Sie sind eingeloggt.";
 
+                // (8) $ _ S E S S I O N 
+                //     Superglobale Variable - ist im ganzen Programm gültig und muss nicht mit "global" gekennzeichnet werden
+                //     In das $_SESSION Array wird der Benutzer als "eingeloggt" eingetragen. 
+                //     In der Funktion "ist_eingeloggt" (siehe funktionen.php) wird geprüft, ob der User eingeloggt ist. 
+
                 $_SESSION["eingeloggt"] = true;
                 $_SESSION["benutzername"] = $row["benutzername"];
 
-                // Anzahl der Logins in DB speichern  
-                // Im DB-Feld darf nicht NULL definiert sein, sonst kann keine Berechnung stattfinden.
-                // Last login speichern: im DB Feld muss NULL erlaubt sein. 
-                // 2 Prüfungen können in einem Statement erfasst werden
-                query($db, "UPDATE benutzer SET 
+                // (9) Anzahl der Logins und Last Login in DB speichern 
+                //     Im DB-Feld darf nicht NULL definiert sein, sonst kann keine Berechnung stattfinden.
+                //     Last login speichern: im DB Feld muss NULL erlaubt sein. 
+                //     2 Prüfungen können in einem Statement erfasst werden
+                query("UPDATE benutzer SET 
                 anzahl_logins = anzahl_logins + 1,
                 last_login = NOW() 
                 WHERE id ={$row["id"]}");
@@ -45,7 +68,7 @@ if(!empty($_POST)){
                 header("Location: index.php");
             } else {
                 //Passwort war falsch
-                $error = "Benutzername oder Passwort sind falsch!";
+                $error = "Benutzername oder Passwort sind falsch!"; kxß
                 
             }
             } else {
@@ -70,6 +93,7 @@ if(!empty($_POST)){
 <body>
     <h1>Loginbereich zur Rezepteverwaltung</h1>
     <?php
+    // Wenn im $error Array ein Fehler registriert wurde - $error is not empty - , dann soll der Fehlertext ($error = "Blabla") oberhalb des Formulars angezeigt werden.
     if(!empty($error)){
         echo "<p>".$error."</p>";
     }

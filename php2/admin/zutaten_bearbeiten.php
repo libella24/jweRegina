@@ -6,8 +6,8 @@ $sql_id = escape($_GET["id"]); //escape Funktion auf ID anwenden.
 
 $erfolg = false;
 
-// Formular wurde abgeschickt
-// ===========================
+// (1) Formular wurde abgeschickt, eingegebene Daten werden validiert
+// ===================================================================
 // wenn das Formular abgeschickt wurde (die POSTs sind nicht leer)....
 
 if(!empty($_POST)){ // .... dann werden Daten validiert

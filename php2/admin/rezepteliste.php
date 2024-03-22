@@ -13,7 +13,10 @@
 $result = mysqli_query($db, "SELECT * FROM rezepte ORDER BY titel ASC");
 
 // Zwischenzeitlich das Array anschauen, das mit der Abfrage herauskommt
-//print_r($result);
+print_r($result);
+
+// (2) Die Tabelle aufbauen, in der die Rezepte angezeigt werden sollen
+// =====================================================================
 
 echo "<table border='1'>";
     echo "<thread>";
@@ -26,16 +29,18 @@ echo "<table border='1'>";
     echo "</thread>";
 echo "<tbody>";
 
-// (2) Jede Zeile durchiterieren und in ein Array packen
+// (3) Jede Zeile durchiterieren und in ein Array packen
 // ======================================================
+//     Im $result wurde zuvor jede Zeile selektiert (Pkt. 1) 
+//     Für jede Zeile wird eine Tabellenzeile erstellt
 
 while ($row = mysqli_fetch_assoc($result)){
     echo "<tr>";
     echo "<td>". $row["titel"] . "</td>";
     echo "<td>". $row["beschreibung"] . "</td>";
     echo "<td>". $row["benutzer_id"] . "</td>";
-    echo "<td>". "<a href='zutaten_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>". "</td>"; // dieser Link ist die URL beim Aufruf der Seite "zutaten_bearbeiten"
-    echo "<td>". "<a href='zutaten_entfernen.php?id={$row["id"]}'>Entfernen</a>". "</td>"; // dieser Link ist die URL beim Aufruf der Seite "zutaten_bearbeiten"
+    echo "<td>". "<a href='rezept_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>". "</td>"; // dieser Link ist die URL beim Aufruf der Seite "zutaten_bearbeiten"
+    echo "<td>". "<a href='rezept_entfernen.php?id={$row["id"]}'>Entfernen</a>". "</td>"; // dieser Link ist die URL beim Aufruf der Seite "zutaten_bearbeiten"
     echo "</tr>";
     }
 echo "</tbody>";
